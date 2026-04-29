@@ -1,12 +1,13 @@
 from ollama import chat
 from ollama import ChatResponse
 
-ChatResponse = chat(model='llama3', messages=[
+response:ChatResponse = chat(model='llama3', messages=[
   {
     'role': 'user',
     'content': 'Hi',
   },
-])
-# print(ChatResponse)
-# print(ChatResponse['message'])
-print(ChatResponse['message']['content'])
+]);
+
+print(response)
+print(response['message']['content'])
+print(response['message']['content'])
