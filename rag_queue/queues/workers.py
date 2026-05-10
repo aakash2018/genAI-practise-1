@@ -8,34 +8,8 @@ from langchain_qdrant import QdrantVectorStore
 from langchain_ollama import OllamaEmbeddings
 
 
-pdf_path = Path(__file__).parent.parent/ "nodejs.pdf"
-
-print(f"Loading PDF from path: {pdf_path}")
-
-# Load this file in python program
-loader = PyPDFLoader(file_path=pdf_path)
-docs = loader.load()
-
-# Split the docs into smaller chunks
-text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=1000,
-    chunk_overlap=400
-)
-
-chunks = text_splitter.split_documents(documents=docs)
-
 embeddings = OllamaEmbeddings(
-    model="nomic-embed-text",
-)
-
-
-
-vector_stored = QdrantVectorStore.from_documents(
-    documents=chunks,
-    embedding=embeddings,
-    url="http://localhost:6333",
-    collection_name="learning_rag",
-    force_recreate=True
+        model="nomic-embed-text",
 )
 
 vector_store = QdrantVectorStore.from_existing_collection(
@@ -43,7 +17,6 @@ vector_store = QdrantVectorStore.from_existing_collection(
     url="http://localhost:6333",
     collection_name="learning_rag"
 )
-
 
 async def process_query(query:str):
     print(f"Processing query: {query}")
