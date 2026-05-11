@@ -7,3 +7,5 @@ rq worker --worker-class rq.worker.SimpleWorker
 
 
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+pip install -U langraph
