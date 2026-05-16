@@ -1,0 +1,3 @@
+docker exec -it ollama ollama pull llama3
+docker exec -it ollama ollama pull tinyllama
+curl http://localhost:11434/api/tags
