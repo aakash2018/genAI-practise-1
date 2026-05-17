@@ -15,7 +15,7 @@ client = AsyncOpenAI(
 async def tts(speech: str):
     response = await client.chat.completions.create(
         # model="legraphista/Orpheus:3b-ft-q2_k",
-        model="qwen2.5:1.5b",
+        model="llama3",
         messages=[
             {
                 "role": "system",
@@ -94,7 +94,7 @@ async def first():
                     })  
             payload = {
                 # "model": "tinyllama:latest",
-                "model":"qwen2.5:1.5b",
+                "model":"llama3",
                 "messages": messages,
                 "stream": False
             }
