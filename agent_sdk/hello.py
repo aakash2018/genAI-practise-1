@@ -1,6 +1,5 @@
 from agents import Agent, Runner, AsyncOpenAI, OpenAIChatCompletionsModel , set_tracing_disabled
 
-
 set_tracing_disabled(True)
 
 # Ollama OpenAI-compatible client
@@ -21,7 +20,6 @@ agent = Agent(
     instructions="You are a helpful AI assistant",
     model=model
 )
-
 
 messages= [
     # {

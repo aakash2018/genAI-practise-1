@@ -1,1 +1,4 @@
 pip install openai-agents
+
+https://openai.github.io/openai-agents-python/
+https://www.geeksforgeeks.org/artificial-intelligence/roadmap-to-generative-ai-a-comprehensive-guide-for-beginners/
